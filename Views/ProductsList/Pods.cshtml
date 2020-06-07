@@ -1,0 +1,17 @@
+﻿@model AppleShowcase.Data.Models.PodsViewModel
+
+<div class="container mt-4">
+    <h1>Pods</h1>
+    <div class="row mt-4 mb-2">
+        @foreach (var item in Model.Products) {
+            <div class="col-lg-4 mb-2">
+                @{
+                    <img src="@Url.Action("GetImage", new { id=@item.imageID})" style="width:250px;height:250px;" />
+                }
+                <h3 class="mt-2">@item.name</h3>
+                <p class="mb-1">@item.description</p>
+                <h6>@item.price</h6>
+            </div>
+        }
+    </div>
+</div>

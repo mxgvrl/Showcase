@@ -1,0 +1,38 @@
+﻿@model AppleShowcase.Data.Models.Product
+ 
+@{
+    ViewData["Title"] = "Attach image";
+}
+
+<style>
+    input {
+    font-family: "Montserrat";
+    background-color: transparent;
+    border-color: transparent;
+    }
+</style>
+
+<div class="container mt-4">
+    <h2>@ViewData["Title"]</h2>
+    <form method="post" enctype="multipart/form-data">
+        <div>
+            <input type="hidden" asp-for="Id" />
+            <div class="form-group">
+                <label asp-for="Name"></label>
+                <div>@Model.name</div>
+            </div>
+            <div class="form-group">
+                <label>Download image</label>
+                <input type="file" name="uploadedFile" class="form-control" />
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Attach" class="btn btn-outline-secondary" />
+            </div>
+        </div>
+    </form>
+     
+    @if (Model.HasImage())
+    {
+        <img src="@Url.Action("GetImage", new { id=@Model.imageID})" style="width:250px;height:250px;" />
+    }
+</div>

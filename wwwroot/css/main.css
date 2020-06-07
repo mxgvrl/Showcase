@@ -1,0 +1,141 @@
+@import url('https://fonts.googleapis.com/css2?family=Baloo+Tamma+2&family=Lato&family=Montserrat:wght@500&family=Quicksand:wght@500&family=Raleway:wght@500&display=swap');
+body {
+    background-color: #f2f2f2;
+    font-family: Quicksand;
+    font-weight: 300;
+    font-size: 16px;
+    color: #555;
+
+    -webkit-font-smoothing: antialiased;
+    -webkit-overflow-scrolling: touch;
+}
+
+button {
+    background-color: #95999c;
+    font-family: Montserrat;
+    border-radius: 5px;
+}
+
+footer {
+    background-color: #343a40;
+    color: #95999c;
+}
+
+h1, h2, h3 {
+    font-family: "Baloo Tamma 2";
+    font-weight: 300;
+    color: #333;
+}
+
+h5 {
+    font-family: Montserrat;
+    font-weight: 300;
+    color: #adb5bd;
+}
+
+h4, h6 {
+    font-family: Montserrat;
+    font-weight: 300;
+    color: #333;
+}
+
+p {
+    line-height: 28px;
+    margin-bottom: 25px;
+}
+
+.centered {
+    text-align: center;
+}
+
+a {
+    color: #adb5bd;
+}
+
+a:hover, a:focus {
+    color: #7b7b7b;
+    text-decoration: none;
+    outline: 0;
+}
+
+hr {
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid #ccc;
+    margin: 1em 0;
+    padding: 0;
+}
+
+nav {
+    background-color: #1b1e21;
+    opacity: 0.96;
+}
+
+footer {
+    background-color: #1b1e21;
+}
+
+.navbar {
+    font-weight: 800;
+    font-size: 14px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+
+.navbar-inverse {
+    background: #1b1e21;
+    border-color: #2d2d2d;
+}
+
+.product-device {
+    position: absolute;
+    right: 10%;
+    bottom: -30%;
+    width: 300px;
+    height: 540px;
+    background-color: #333;
+    border-radius: 40px;
+    -webkit-transform: rotate(30deg);
+    transform: rotate(30deg);
+}
+
+.product-device::before {
+    position: absolute;
+    top: 13%;
+    right: 15px;
+    bottom: 13%;
+    left: 15px;
+    content: "";
+    background-color: rgba(255, 255, 255, .1);
+    border-radius: 5px;
+}
+
+.product-device::after {
+    position: absolute;
+    top: 6%;
+    right: 115px;
+    bottom: 93%;
+    left: 115px;
+    content: "";
+    background-color: rgba(255, 255, 255, .1);
+    border-radius: 5px;
+}
+
+.product-device-2 {
+    top: -25%;
+    right: auto;
+    bottom: 0;
+    left: 5%;
+    background-color: #d2d2d2;
+}
+
+
+
+
+
+
+
+
+
+

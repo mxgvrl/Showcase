@@ -1,0 +1,41 @@
+@model AppleShowcase.Data.Models.IndexViewModel
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+
+<div class="container mt-4">
+    <h2>@ViewData["Title"]</h2>
+    <form method="get">
+        <div class="form-group">
+            <label asp-for="Filter.Name">Search by matches</label>
+            <input type="text" name="Filter.Name" value="@Model.Filter.Name" class="form-control"  />
+        </div>
+        <div class="form-group">
+            <input type="submit" value="Search" class="btn btn-outline-secondary" />
+        </div>
+    </form>
+     
+    <p>
+        <a asp-controller="AdminPage" asp-action="Create">Add</a>
+    </p>
+        <table class="table">
+            <tr>
+                <th>Model</th>
+                <th>Description</th>
+                <th>Price</th>
+                <th></th>
+            </tr>
+     
+            @foreach (var item in Model.Products)
+            {
+                <tr>
+                    <td>@item.name</td>
+                    <td>@item.description</td>
+                    <td>@item.price</td>
+                    <td>
+                        <a asp-controller="AdminPage" asp-action="Edit" asp-route-id="@item.Id">Change</a> |
+                        <a asp-controller="AdminPage" asp-action="Delete" asp-route-id="@item.Id">Delete</a> |
+                        <a asp-controller="AdminPage" asp-action="AttachImage" asp-route-id="@item.Id">Image</a>
+                    </td>
+                </tr>
+            }
+        </table>
+</div>

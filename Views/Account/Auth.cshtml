@@ -1,0 +1,69 @@
+﻿@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+
+<link rel="stylesheet" href="~/css/auth.css"/>
+
+<br/>
+<div>
+<div class="main mb-5" >
+    <div class="container a-container" id="a-container">
+        <form class="form" id="a-form" asp-action="Register" asp-controller="Account" asp-anti-forgery="true">
+            <h2 class="form_title title">Create Account</h2>
+            <input class="form__input" type="text" placeholder="Name">
+            <input class="form__input" type="text" placeholder="Email">
+            <input class="form__input" type="password" placeholder="Password">
+            <button class="form__button button submit">SIGN UP</button>
+        </form>
+    </div>
+    <div class="container b-container" id="b-container">
+        <form class="form" id="b-form" asp-action="Login" asp-controller="Account" asp-anti-forgery="true">
+            <h2 class="form_title title">Sign in to Website</h2>
+            <input class="form__input" type="text" placeholder="Email">
+            <input class="form__input" type="password" placeholder="Password"><a class="form__link">Forgot your password?</a>
+            <button class="form__button button submit">SIGN IN</button>
+        </form>
+    </div>
+    <div class="switch" id="switch-cnt">
+        <div class="switch__circle"></div>
+        <div class="switch__circle switch__circle--t"></div>
+        <div class="switch__container" id="switch-c1">
+            <h2 class="switch__title title">Welcome Back !</h2>
+            <p class="switch__description description">To keep connected with us please login with your personal info</p>
+            <button class="switch__button button switch-btn">SIGN IN </button>
+        </div>
+        <div class="switch__container is-hidden" id="switch-c2">
+            <h2 class="switch__title title">Hello Friend !</h2>
+            <p class="switch__description description">Enter your personal details and start journey with us</p>
+            <button class="switch__button button switch-btn">SIGN UP</button>
+        </div>
+    </div>
+</div>
+</div><br/>
+
+
+
+@model AppleShowcase.Data.Models.LoginModel
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+
+<h2>Вход на сайт</h2>
+ 
+<a asp-action="Register" asp-controller="Account">Регистрация</a>
+ 
+<form asp-action="Login" asp-controller="Account" asp-anti-forgery="true">
+    <div class="validation" asp-validation-summary="ModelOnly" />
+    <div>
+        <div class="form-group">
+            <label asp-for="Name">Введите Email</label>
+            <input type="text" asp-for="Name" />
+            <span asp-validation-for="Name" />
+        </div>
+        <div class="form-group">
+            <label asp-for="Password">Введите пароль</label>
+            <input asp-for="Password" />
+            <span asp-validation-for="Password" />
+        </div>
+        <div class="form-group">
+            <input type="submit" value="Войти" class="btn btn-outline-dark" />
+        </div>
+    </div>
+</form>
+
